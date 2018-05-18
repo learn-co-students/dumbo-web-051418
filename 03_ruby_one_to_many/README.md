@@ -18,7 +18,7 @@
   * `#paintings` that returns an array of Painting instances
   * `#make_painting` that takes a title, width, and height. It creates a new Painting instance, and adds it to the Painter's painting collection
 * Create a Painting class
-  * should initialize with a title, width, and height
+  * should initialize with a title, width, height, and painter
   * a reader and writer for title
   * a reader for width and height
   * `#painter` that returns an instance of the Painter class
