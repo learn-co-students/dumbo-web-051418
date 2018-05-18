@@ -16,7 +16,14 @@ class Painter
   end
 
   def paintings
-    #returns an array of Painting instances
+    #returns an array of Painting instances related to this instance of painter
+    Painting.all.select do |painting|
+      painting.painter == self
+    end
+  end
+
+  def galleries
+    self.paintings.collect {|painting| painting.gallery}.uniq
   end
 
   def make_painting
