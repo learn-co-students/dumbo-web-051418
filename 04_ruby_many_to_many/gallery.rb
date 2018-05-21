@@ -1,7 +1,3 @@
-#   * should initialize with a name
-
-#   * a reader method for name
-
 class Gallery
   attr_reader :name
 
@@ -18,10 +14,12 @@ class Gallery
 
   def paintings
     #* `#paintings` that returns an array of Painting instances related to this instance of gallery
+    Painting.all.select {|painting| painting.gallery == self}
   end
 
   def painters
     #* `#painters` that returns an array of Painter instances related to this instance of gallery
+    self.paintings.map {|painting| painting.painter}.uniq
   end
 
 end
