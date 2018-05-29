@@ -6,7 +6,6 @@
 * Distinguish between ORM and SQL
 * Demonstrate that ORMs are the pattern connecting scripting languages and databases
 * Explain how the `sqlite` gem works as the driver or wrapper around SQL
-* Implement HEREDOCs to be saved in variables to execute by SQL driver
 * Perform persistent CRUD actions on two separate models
 
 ## Deliverables
@@ -14,11 +13,11 @@
 ### Each class
 
 * Public Methods
-  * `#initialize(attrs)`
-  * `#save`
+  * `#initialize(attrs)` # Genre.new(attributes)
+  * `#save`     
   * `#update(attrs)`
   * `#delete`
-  * `.create(attrs)`
+  * `.create(attrs)` # Genre.create(attributes)
   * `.all`
   * `.delete(id)`
   * `.find(id)`
@@ -31,10 +30,3 @@
   * `#insert_record`
   * `#update_record`
   * `#delete_record`
-
-
-### `Album`
-
-* `#AlbumID` pk
-* `#ArtistId` fk
-* `#Title`
