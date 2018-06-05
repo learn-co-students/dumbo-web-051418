@@ -1,9 +1,9 @@
 <form action='/books/create' method='POST'>
   <label>Title</label>
-  <input type='text' name='title'/>
+  <input type='text' name='books[title]' placeholder="Book Title"/>
   <label>Author</label>
-  <input type='text' name='author'/>
+  <input type='text' name='books[author]' placeholder="Book Author"/>
   <label>Snippet</label>
-  <input type='text' name='snippet'/>
+  <input type='text' name='books[snippet]' placeholder="Book Snippet"/>
   <input type='submit'/>
 </form>

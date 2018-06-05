@@ -22,6 +22,10 @@ class ApplicationController < Sinatra::Base
   # want to take will look similar no matter what the
   # resource is.
 
+  get "/" do
+    "TAKE ME TO THE /BOOKS ROUTE"
+  end
+
 
   # Index Route ('Show me all the things under this route')
   # =====================
@@ -59,7 +63,7 @@ class ApplicationController < Sinatra::Base
     # just make it return us back to the form.
     # book = Book.create(params)
 
-    book = Book.new(params)
+    book = Book.new(book_params)
     if book.save
       # If we are successful, redirect to the show page
       redirect "/books/#{book.id}"
@@ -84,9 +88,53 @@ class ApplicationController < Sinatra::Base
   end
 
 
-  # Some routes we haven't built:
-  # * Edit - Send me to a form that **AFTER** I submit,
-  #           I will update something on the database
-  # * Update - **AFTER** I submit the edit form, it will update the database
-  # * Delete - Delete something under this route
+  # Edit Route
+  # =====================
+  # We are gonna get sent to our form to edit data
+  # Only after the form submits will we **update** anything
+  get "/books/:id/edit" do
+    book_id = params["id"] # the request's id
+    @book = Book.find(book_id)
+
+    erb :'edit.html' # => 'edit.html.erb'
+    # erb :edit #=> 'edit.erb'
+  end
+
+  # Update Route
+  # =====================
+  # We are gonna get here only AFTER we got sent from
+  # the edit form. It will redirect us to the show page
+  # so that we can see our newly editted resource!
+  patch "/books/:id" do
+    book_id = params["id"] # the request's id
+
+    @book = Book.find(params["id"])
+    @book.update(book_params)
+
+    redirect "/books/#{@book.id}"
+  end
+
+  # Delete Route
+  # =====================
+  # We will reach this whenever the browser,
+  # sends a request to DELETE a resource. We
+  # can add this on the show page so that way
+  # we can delete something. But it will redirect
+  # us back to the index route
+  delete "/books/:id" do
+    book_id = params["id"]
+    book = Book.find(book_id)
+
+    book.delete
+    redirect '/books'
+  end
+
+  private
+
+  # We use this method as a helper method in order
+  # to grab data from our params that relate to the
+  # object that the controller is related to.
+  def book_params
+    params["books"]
+  end
 end
