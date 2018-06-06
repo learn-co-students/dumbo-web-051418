@@ -1,0 +1,25 @@
+<form action='/books/create' method='POST'>
+  <label>Title</label>
+  <input type='text' name='books[title]' placeholder="Book Title"/>
+  <!-- params: {books: {title: 'whatever hthe user types'}} -->
+
+  <label>Author</label>
+  <input type='text' name='books[author_name]' placeholder="Book Author"/>
+  <!-- params: {books: {title: 'whatever hthe user types', author: 'whatever'}} -->
+
+  <label>Snippet</label>
+  <input type='text' name='books[snippet]' placeholder="Book Snippet"/>
+  <!-- params: {books: {title: 'whatever hthe user types', author: 'whatever', snippet: 'whatever'}} -->
+
+  <label>Genres</label>
+  <input type="text" name="books[genres][0]">
+  <!-- params: { books: { genres: ['sf'] } } -->
+
+  <input type="text" name="books[genres][1]">
+  <!-- params: { books: { genres: ['sf', 'ro'] } } -->
+
+  <input type="text" name="books[genres][2]">
+  <!-- params: { books: { genres: ['sf', 'ro', 'mm'] }} -->
+
+  <input type='submit'/>
+</form>
