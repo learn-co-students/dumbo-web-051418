@@ -1,0 +1,5 @@
+<%= form_for @post, url: {action: 'create'} do |f| %>
+  <%= f.text_field :title, required: true %>
+  <%= f.text_area :content, required: true %>
+  <%= f.submit "Create new Post" %>
+<% end %>
