@@ -1,0 +1,21 @@
+
+
+<!-- <h2>New Doctor</h2>
+<%= form_tag '/doctors', method: :post do %>
+  <%= label_tag(:name, "Doctor's Name") %>
+  <%= text_field_tag('doctor[name]') %>
+
+  <%= label_tag(:specialty, "Doctor's Specialty") %>
+  <%= text_field_tag 'doctor[specialty]' %>
+
+  <%= submit_tag "Create New Doctor" %>
+<% end %> -->
+<!-- form_for -->
+
+<%= form_for @doctor do |f| %>
+  <%= f.label 'Name' %>
+  <%= f.text_field :name %>
+  <%= f.label 'Specialty' %>
+  <%= f.text_field :specialty %>
+  <%= f.submit 'Create new Doctor' %>
+<% end %>
