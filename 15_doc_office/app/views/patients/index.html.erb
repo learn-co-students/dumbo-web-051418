@@ -1,0 +1,7 @@
+<h2>Patient List</h2>
+
+<ul>
+  <% @patients.each do |patient| %>
+    <li><%=  patient.name %> - (<%= patient.age %>)</li>
+  <% end %>
+</ul>
