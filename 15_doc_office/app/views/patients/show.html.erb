@@ -1,3 +1,11 @@
 <h2> <%= @patient.name %> </h2>
 
 <p> <%= @patient.age %> </p>
+
+<!--  Print out all of my appointments-->
+
+<ul>
+  <% @patient.appointments.each do |appt| %>
+   <li><%= appt.date %> - <%= appt.doctor.name %> <%= link_to "Check Appointment", appointment_path(appt) %> </li>
+  <% end %>
+</ul>

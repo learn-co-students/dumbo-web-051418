@@ -1,0 +1,12 @@
+<%= form_for @appointment do |f|%>
+<!-- Date (text_field), Doctor (text_field), Patient (text_field) -->
+<%= f.label :date %>
+<%= f.text_field :date %>
+<%= f.label :doctor_id %>
+<%= f.collection_select :doctor_id, @doctors, :id, :name %>
+<%= f.label :patient %>
+<%= f.text_field :patient %>
+<%= f.submit %>
+<% end %>
+
+<p>Hello, World!</p>
