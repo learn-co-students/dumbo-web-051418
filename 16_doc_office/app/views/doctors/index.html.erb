@@ -1,0 +1,6 @@
+<h2>Doctor List</h2>
+<ul>
+  <% @doctors.each do |doctor| %>
+    <li><%=  doctor.name %> - (<%= doctor.specialty %>)</li>
+  <% end %>
+</ul>
