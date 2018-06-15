@@ -1,0 +1,10 @@
+<h2>Coffee List</h2>
+
+<%= link_to 'Create a new Coffee', new_brew_path %>
+
+<% @brews.each do |brew| %>
+  <p><%= link_to brew.blend_name, brew_path(brew) %></p>
+  <% brew.customers.each do |customer| %>
+    <%= customer.name %>
+  <% end %>
+<% end %>

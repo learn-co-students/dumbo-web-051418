@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  blend_name: MyString
+  origin: MyString
+  notes: MyString
+  strength: 1
+
+two:
+  blend_name: MyString
+  origin: MyString
+  notes: MyString
+  strength: 1

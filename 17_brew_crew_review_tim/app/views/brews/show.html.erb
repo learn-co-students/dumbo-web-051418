@@ -1,0 +1,23 @@
+<h2><%= @brew.blend_name %></h2>
+
+<ul>
+  <li>Origin: <%= @brew.origin %></li>
+  <li>Notes: <%= @brew.notes %></li>
+  <li>Strength: <%= @brew.strength %></li>
+    <ul>
+      <% @customers.each do |customer| %>
+        <li><%= customer.name %></li>
+        <li>1</li>
+        <li>1</li>
+        <li>1</li>
+      <% end %>
+    </ul>
+</ul>
+
+<%= link_to 'Edit this Coffee', edit_brew_path(@brew) %>
+
+<%= link_to "DELETE THIS COFFEE", @brew, method: :delete, data: { confirm: "Really?" } %>
+
+<!-- <%= form_for @brew, method: :delete do |f| %>
+  <%= f.submit 'DELETE THIS COFFEE' %>
+<% end %> -->
