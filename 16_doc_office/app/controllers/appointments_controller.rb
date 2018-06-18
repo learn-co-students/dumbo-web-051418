@@ -13,8 +13,21 @@ class AppointmentsController < ApplicationController
 
     # binding.pry
 
+
     @appointment = Appointment.create(date: appointment_params["date"], doctor_id: doctor_id, patient_id: patient.id)
-    redirect_to @appointment
+
+    if @appointment.valid?
+        redirect_to @appointment
+    else
+        # If *rendering* the new form, we will need to have
+        # the collection (aka the doctor roster) for our collection selection
+        # @doctors = Doctor.all
+
+        flash[:error] = @appointment.errors.full_messages
+
+        render :new
+    end
+
     # binding.pry
   end
 

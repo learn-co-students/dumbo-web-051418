@@ -1,12 +1,18 @@
+
+<% if flash[:error] %>
+  <div class="alert alert-danger">
+    <% flash[:error].each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </div>
+<% end %>
 <%= form_for @appointment do |f|%>
 <!-- Date (text_field), Doctor (text_field), Patient (text_field) -->
-<%= f.label :date %>
-<%= f.date_field :date %>
-<%= f.label :doctor_id %>
-<%= f.collection_select :doctor_id, @doctors, :id, :name %>
-<%= f.label :patient %>
-<%= f.text_field :patient %>
-<%= f.submit %>
+  <%= f.label :date %>
+  <%= f.date_field :date, date_separator:'-' %>
+  <%= f.label :doctor_id %>
+  <%= f.collection_select :doctor_id, @doctors, :id, :name %>
+  <%= f.label :patient %>
+  <%= f.text_field :patient %>
+  <%= f.submit %>
 <% end %>
-
-<p>Hello, World!</p>
