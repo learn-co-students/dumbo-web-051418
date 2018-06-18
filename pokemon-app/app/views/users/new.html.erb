@@ -1,0 +1,12 @@
+<!-- New User Profile -->
+<%= form_for @user do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, placeholder: "Jane Doe" %>
+  <%= f.label :email %>
+  <%= f.email_field :email, placeholder: "foo@test.com" %>
+  <%= f.label :password %>
+  <%= f.password_field :password, placeholder: "hunter2" %>
+  <!-- <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, placeholder: "hunter2" %> -->
+  <%= f.submit "Create Profile" %>
+<% end %>

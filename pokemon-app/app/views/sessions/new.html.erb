@@ -1,0 +1,6 @@
+<%= form_tag controller: 'sessions', action: 'create', method: 'post' do %>
+  <!-- <input type="text" > -->
+  <%= text_field_tag :email, 'Email' %>
+  <%= text_field_tag :password, 'Password' %>
+  <%= submit_tag 'Login' %>
+<% end %>
