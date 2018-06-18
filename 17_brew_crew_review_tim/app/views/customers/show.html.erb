@@ -1,0 +1,6 @@
+<h1><%= @customer.name %></h1>
+<ul>
+  <% @customer.brews.each do |brew| %>
+    <li><%= link_to brew.blend_name, brew_path(brew) %></li>
+  <% end %>
+</ul>

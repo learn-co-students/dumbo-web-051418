@@ -1,0 +1,18 @@
+<h2>Edit a new Coffee</h2>
+<%= form_for @brew, method: :patch do |f| %>
+  <%= f.label :blend_name, 'Blend Name' %>
+  <%= f.text_field :blend_name, placeholder: "Columbian" %>
+  <br>
+  <%= f.label :origin %>
+  <%= f.text_field :origin, placeholder: "Columbian" %>
+  <br>
+
+  <%= f.label :notes %>
+  <%= f.text_field :notes, placeholder: "Columbian" %>
+  <br>
+
+  <%= f.label :strength %>
+  <%= f.text_field :strength, placeholder: "1-5" %>
+
+  <%= f.submit 'Edit a new Coffee' %>
+<% end %>
