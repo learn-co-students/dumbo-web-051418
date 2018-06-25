@@ -1,18 +1,31 @@
 # Procedural JavaScript
 
+## JavaScript What is Weird
+  - returns
+  - string interpolations
+  - curly boiiis
+  - scope
+  - functions as parameters
+  - defining a function in a parameter
+  - console api
+  - semi-colons
+  - variable declaration
+  - error handling
+  - type coercion
+
 ## JavaScript History
   - Marc Andreessen co-founder of Netscape envisioned a more dynamic web
   - the web needed a scripting language that could interact with the DOM
   - the marketing decisions Netscape made informed the basic structure of JS
   - created by Brandon Eich at Netscape in 10 days in 1995
-  - based off of functional languages with some object-oriented patterns  
+  - based off of functional languages with some object-oriented patterns
   - was not a highly respected programming language for about 10 years
   - the standard for JavaScript implementations is called ECMAScript
   - the standard is updated yearly and the standard for that year is called ECMAScript 20xx (or ES 20xx)
   - [Browser Compatibility](https://kangax.github.io/compat-table/es6/)
   - transpiling: we use the features of the language we want, translate it into something all browsers understand
-  
-  
+
+
 ## Review Request-Response Cycle
 - In the browser
   - A user enters an address in the address bar (or clicks a link)
@@ -31,35 +44,33 @@
   - The [Document Object Model](https://en.wikipedia.org/wiki/Document_Object_Model) is the interface between the loaded HTML and the JavaScript code we write
   - Most browsers are converging on agreeing on web standards, but browsers need ability to add proprietary features to CSS, JS, and DOM
   - [MDN](https://developer.mozilla.org/en-US/)
-  
-  
+
+
 ## Data Types
   - 7 types
-  - object notations 
+  - object notations
   - truthiness
-  
-  
+
+
 ## Variables
   - declaration versus assignment
   - hoisting
-  - scoping 
+  - scoping
   - for loops
-  
-  
+
+
 ## Functions
  - functions are objects
  - store in variables
  - functions have names
- - immediately invoked function expression
+ - immediately invoked function expression IIFE
  - have scope
  - explicit returns
  - pass as arguments to other functions
  - return functions from functions
-    
-  
+
+
 ## How to do the Labs
 - Mocha runs in browser, get used to working with code there
-- console.log
+- console.log('>>>>>>>>>>>>>>>>')
 - debugger (need console open)
-
-  
