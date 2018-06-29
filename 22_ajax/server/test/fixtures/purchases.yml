@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  num_of_sugars: 1
+  creamer_strength: MyString
+  iced: false
+  special_instructions: MyString
+  size: MyString
+
+two:
+  num_of_sugars: 1
+  creamer_strength: MyString
+  iced: false
+  special_instructions: MyString
+  size: MyString
