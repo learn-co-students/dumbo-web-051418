@@ -1,0 +1,2 @@
+- structuring code
+- how to attach specific listeners to list items
