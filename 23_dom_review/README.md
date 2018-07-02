@@ -1,2 +1,15 @@
 - structuring code
+  - MVC
+  - OO JS is your initializer
+    - it adds event listeners and creates a new instance of TaskList
+  - TaskList is the controller
+    - it puts information on the DOM or reads information off it
+  - Task is your model
+    - it stores task attributes including the html for a div
+- submit vs click
+  - always use submit for forms so you can get access to the entire form target
+  - click for elements or stand-alone buttons
 - how to attach specific listeners to list items
+  - add a data attribute
+  - dom traversal
+  - event delegation
