@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Baby",
-      "breed": "Corgi",
+      "breed": "Schnauzer",
       "gender": "male"
     },
     {
@@ -45,7 +45,7 @@
     {
       "id": 8,
       "name": "Chloe",
-      "breed": "Corgi",
+      "breed": "Not a Corgi",
       "gender": "male"
     },
     {

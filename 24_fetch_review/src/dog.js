@@ -6,8 +6,12 @@ class Dog {
     this.id = dog.id
   }
 
+  tableData() {
+    return `<td>${this.name}</td><td>${this.breed}</td><td>${this.gender}</td><td><button data-id='${this.id}'>Edit</button></td>`
+  }
+
   el() {
-    return `<tr><td>${this.name}</td><td>${this.breed}</td><td>${this.gender}</td><td><button data-id='${this.id}'>Edit</button></td>
+    return `<tr id='row-${this.id}'>${this.tableData()}
     </tr>`
   }
 }

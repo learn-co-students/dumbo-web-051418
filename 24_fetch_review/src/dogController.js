@@ -15,13 +15,12 @@ class DogController {
     // })
 
     const nameInput = document.querySelector('#name')
-    nameInput.value = newDog.name
     const genderInput = document.querySelector('#gender')
-    genderInput.value = newDog.gender
     const breedInput = document.querySelector('#breed')
-    breedInput.value = newDog.breed
-
     const idInput = document.querySelector('#id')
+    nameInput.value = newDog.name
+    genderInput.value = newDog.gender
+    breedInput.value = newDog.breed
     idInput.value = newDog.id
   }
 
@@ -31,6 +30,13 @@ class DogController {
     const breed = document.querySelector('#breed').value
     const id = document.querySelector('#id').value
     return {name, gender, breed, id}
+  }
+
+  renderupdatedDog(dog) {
+    const newDog = new Dog(dog)
+    const tr = document.querySelector(`#row-${newDog.id}`)
+    const el = newDog.el()
+    tr.innerHTML = el
   }
 }
 
