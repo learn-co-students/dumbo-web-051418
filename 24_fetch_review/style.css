@@ -1,22 +1,21 @@
 .main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   height: 100vh;
   font-family: 'Open Sans', sans-serif;
 }
 
-h1, h2 {
+.flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1, h2, h3, h4 {
   font-family: 'Kaushan Script', cursive;
   margin-bottom: 0px;
 }
 
 th {
   font-weight: bold;
-}
-
-.width-75 {
-  width: 75%;
 }
 
 .center {
