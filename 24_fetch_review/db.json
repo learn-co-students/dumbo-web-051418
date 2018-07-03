@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name": "Baby",
-      "breed": "Scottish Deerhound",
+      "breed": "Corgi",
       "gender": "male"
     },
     {
@@ -15,25 +15,25 @@
     {
       "id": 3,
       "name": "Snickers",
-      "breed": "Dachshund",
+      "breed": "Corgi",
       "gender": "female"
     },
     {
       "id": 4,
       "name": "Harvey",
-      "breed": "Irish Spaniel",
+      "breed": "Corgi",
       "gender": "male"
     },
     {
       "id": 5,
       "name": "Gracie",
-      "breed": "Miniature Pinscher",
+      "breed": "Corgi",
       "gender": "female"
     },
     {
       "id": 6,
       "name": "Oreo",
-      "breed": "English Springer",
+      "breed": "Corgi",
       "gender": "male"
     },
     {
@@ -45,7 +45,7 @@
     {
       "id": 8,
       "name": "Chloe",
-      "breed": "Dandie Terrier",
+      "breed": "Corgi",
       "gender": "male"
     },
     {
