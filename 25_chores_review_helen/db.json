@@ -1,0 +1,28 @@
+{
+  "chores": [
+    {
+      "id": 1,
+      "title": "Wash Dishes",
+      "priority": "Importantsdfsddsdsd",
+      "duration": "15min"
+    },
+    {
+      "title": "Chore",
+      "priority": "High",
+      "duration": "1 hour",
+      "id": 5
+    },
+    {
+      "title": "Chore 2",
+      "priority": "Highsdfsdfsdf",
+      "duration": "100 hours",
+      "id": 6
+    },
+    {
+      "title": "Please",
+      "priority": "Work",
+      "duration": "2 hours",
+      "id": 7
+    }
+  ]
+}

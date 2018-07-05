@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title> More Chore </title>
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link href="src/stylesheet.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class='row'>
+      <div class='col-md-1'>
+      </div>
+
+      <h2>My Chores</h2>
+      <div class='col-md-12' id="container">
+        <div id="chore-list">
+        </div>
+      </div>
+
+      <div class='col-md-1'>
+      </div>
+    </div>
+    <div class='row'>
+      <div class='col-md-4'>
+      </div>
+      <div class='col-md-4'>
+        <form id="new-chore-form">
+          <label> Title </label><br>
+          <input name='title' id='title'/><br>
+
+          <label> Priority </label><br>
+          <input name='priority' id='priority'> </input><br>
+
+          <label> Duration </label><br>
+          <input name='duration' id='duration'> </input><br>
+
+          <button id='submit-btn'> Create Chore </button>
+        </form>
+      </div>
+      <div class='col-md-4'>
+      </div>
+    </div>
+
+
+  <!-- <script type="text/javascript" src='src/index.js'></script> -->
+  <script type="text/javascript" src='src/chore.js'></script>
+  <script type="text/javascript" src='src/choresController.js'></script>
+  <script type="text/javascript" src='src/adapter.js'></script>
+  <script type="text/javascript" src='src/index.js'></script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+#chore-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-left: 17%;
+}
+
+#submit-btn {
+    background-color: #70A288;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 10px;
+}
+
+#new-chore-form {
+  background-color: #D5896F;
+  border: solid #04395E 7px;
+  color: white;
+  align-content: center;
+}
+
+.delete-button {
+    background-color: #D5896F;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 12px;
+    margin: 10px;
+}
+
+.chore-card {
+  margin: 10px;
+  padding: 10px;
+  width: 300px;
+  height: 300px;
+  border: solid #DAB785 7px;
+  overflow: scroll;
+  background-color: #70A288;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+input {
+  color: black;
+}
+
+body {
+    background-color: #031D44;
+    color: white;
+    text-align: center;
+}
