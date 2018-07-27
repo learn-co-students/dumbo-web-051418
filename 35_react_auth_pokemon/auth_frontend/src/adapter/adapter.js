@@ -33,9 +33,43 @@ const loginUser = (username, password) => {
   }).then(res => res.json())
 }
 
+const getCurrentUser = (token) => {
+  return fetch(`${urlBase}/current_user`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accepts: 'application/json',
+      Authorization: token
+    }
+  }).then(res => res.json())
+}
+
+const makeUserTeamRequest = (id, token) => {
+  return fetch(`${urlBase}/users/${id}/pokemon`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accepts: 'application/json',
+      Authorization: token
+    }
+  }).then(res => res.json())
+}
+
+const setUserTeam = (id, token, pokemon) => {
+  return fetch(`${urlBase}/users/${id}/pokemon`, {
+    headers: {
+      'Content-Type': 'application/json',
+      Accepts: 'application/json',
+      Authorization: token
+    },
+    method: 'POST',
+    body: JSON.stringify({ pokemon })
+  }).then(res => res.json())
+}
 
 export {
   makePokemonRequest,
   createUser,
-  loginUser
+  loginUser,
+  getCurrentUser,
+  makeUserTeamRequest,
+  setUserTeam
 }

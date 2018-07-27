@@ -2,7 +2,7 @@ import React from 'react'
 import PokemonItem from './PokemonItem'
 
 
-const MyTeam = ({pokemon, clickPokemon}) => {
+const MyTeam = ({pokemon, clickPokemon, setTeam}) => {
   const team = pokemon.map(pokemonItem => {
     return <PokemonItem pokemon={pokemonItem} key={pokemonItem.id} click={clickPokemon} />
   })
@@ -13,9 +13,9 @@ const MyTeam = ({pokemon, clickPokemon}) => {
         <div className="row team-row">
           {team}
         </div>
-        <div className="row">
-          <button>Save</button>
-        </div>
+        {/*<div className="row">
+          <button onClick={setTeam}>Save</button>
+        </div>*/}
       </div>
     </div>
   )

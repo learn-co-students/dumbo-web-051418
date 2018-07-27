@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import { makePokemonRequest, createUser, loginUser } from './adapter/adapter'
+import { makePokemonRequest, createUser, loginUser, getCurrentUser } from './adapter/adapter'
 import PokemonContainer from './pokemon/PokemonContainer'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch, Redirect, withRouter } from 'react-router-dom'
 import NotFound from './util/NotFound'
 import Nav from './util/Nav'
 import AuthAction from './auth/AuthAction'
@@ -15,46 +15,66 @@ class App extends Component {
 
   componentDidMount() {
     console.log("App mounted")
-    if (localStorage.getItem('current_user')) {
-      this.setState({
-        current_user: JSON.parse(localStorage.getItem('current_user'))
+    if (localStorage.getItem('token')) {
+      getCurrentUser(localStorage.getItem('token')).then((user) => {
+        if (user) {
+          this.setState({
+            current_user: user
+          })
+        } else {
+          this.logOut()
+        }
       })
+
     }
 
   }
 
   submitSignUp = (username, password) => {
-    createUser(username, password).then((user) => {
-      this.setState({ current_user: user }, () => {
-        localStorage.setItem('current_user', JSON.stringify(this.state.current_user))
+    createUser(username, password).then((data) => {
+      getCurrentUser(data.token).then((user) => {
+        this.setState({ current_user: user }, () => {
+          localStorage.setItem('token', data.token)
+          this.props.history.push('/pokemon')
+        })
       })
     })
-    // redirect to pokemon page
   }
 
   submitLogin = (username, password) => {
-    loginUser(username, password).then((user) => {
-      this.setState({ current_user: user }, () => {
-        localStorage.setItem('current_user', JSON.stringify(this.state.current_user))
+    loginUser(username, password).then((data) => {
+      getCurrentUser(data.token).then((user) => {
+        this.setState({ current_user: user }, () => {
+          localStorage.setItem('token', data.token)
+          this.props.history.push('/pokemon')
+        })
       })
+
     })
-    // redirect to pokemon page
+  }
+
+  logOut = () => {
+    localStorage.removeItem('token')
+    this.setState({ current_user: null })
+    this.props.history.push('/login')
   }
 
   render() {
     return (
       <div className="App">
-        <Nav current_user={ this.state.current_user }/>
+        <Nav current_user={ this.state.current_user } logOut={this.logOut}/>
         <div style={{paddingTop: "63px"}}>
           <Switch>
             <Route path="/pokemon" render={() => {
-              return <PokemonContainer />
+              return <PokemonContainer current_user={ this.state.current_user }/>
             }} />
             <Route path="/signup" render={() => {
-              return <AuthAction submitAuthAction={this.submitSignUp} />
+              return (this.state.current_user ? <Redirect to="/pokemon" />
+                : <AuthAction submitAuthAction={this.submitSignUp} />)
             }} />
             <Route path="/login" render={() => {
-              return <AuthAction  submitAuthAction={this.submitLogin} />
+              return (this.state.current_user ? <Redirect to="/pokemon" />
+                : <AuthAction  submitAuthAction={this.submitLogin} />)
             }} />
             <Route path="/404" component={NotFound} />
             <Redirect to="/404" />
@@ -66,4 +86,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

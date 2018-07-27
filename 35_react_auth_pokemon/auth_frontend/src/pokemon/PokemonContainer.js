@@ -3,7 +3,7 @@ import PokemonList from './PokemonList'
 import PokemonFilter from './PokemonFilter'
 import { Route, Switch } from 'react-router-dom'
 import PokemonDetails from './PokemonDetails'
-import { makePokemonRequest } from '../adapter/adapter'
+import { makePokemonRequest, makeUserTeamRequest, setUserTeam } from '../adapter/adapter'
 
 import MyTeam from './MyTeam'
 
@@ -22,6 +22,31 @@ class PokemonContainer extends React.Component {
     })
   }
 
+  makeTeamFetch = () => {
+    // 1. is there a user prop?
+    // 2. is the user prop different from the previously set user state?
+    // if so: get the team pokemon, set them in state, and set the user for those pokemon in state
+    if (this.props.current_user && this.props.current_user !== this.state.current_user) {
+      makeUserTeamRequest(this.props.current_user.id, localStorage.getItem('token')).then(pokemonData => {
+        this.setState({
+          team: pokemonData,
+          current_user: this.props.current_user
+        })
+      })
+    }
+  }
+
+  setTeam = () => {
+    if (this.props.current_user) {
+      setUserTeam(this.props.current_user.id, localStorage.getItem('token'), this.state.team).then(pokemonData => {
+        this.setState({
+          team: pokemonData,
+          current_user: this.props.current_user
+        })
+      })
+    }
+  }
+
   changeFilterInput = (input) => {
     this.setState({
       input
@@ -34,8 +59,9 @@ class PokemonContainer extends React.Component {
         return {
           team: [...prevState.team, pokemon]
         }
-      })
+      }, () => this.setTeam())
     }
+
   }
 
   removeFromTeam = (pokemon) => {
@@ -44,10 +70,12 @@ class PokemonContainer extends React.Component {
       return {
         team: prevState.team
       }
-    })
+    }, () => this.setTeam())
   }
 
   render() {
+    this.makeTeamFetch()
+
     const {
       pokemon
     } = this.props
@@ -63,7 +91,7 @@ class PokemonContainer extends React.Component {
         <Route path="/pokemon" render={() => {
           return (
             <Fragment>
-              <MyTeam pokemon={this.state.team} clickPokemon={this.removeFromTeam} />
+              { this.props.current_user && <MyTeam pokemon={this.state.team} clickPokemon={this.removeFromTeam} setTeam={this.setTeam} /> }
               <PokemonFilter inputValue={this.state.input} changeFilterInput={this.changeFilterInput} />
               <PokemonList pokemon={this.state.pokemon} filterText={this.state.input} clickPokemon={this.addToTeam} />
             </Fragment>

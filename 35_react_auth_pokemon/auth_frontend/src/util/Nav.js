@@ -12,7 +12,7 @@ const Nav = (props) => {
       </div>) }
       <Link className="item" to="/pokemon">Pokemon</Link>
       { props.current_user ?
-        <Link className="item" to="/logout">Log Out</Link>
+        <a className="item" onClick={props.logOut}>Log Out</a>
         : (<Fragment>
             <Link className="item" to="/signup">Sign Up</Link>
             <Link className="item" to="/login">Log In</Link>
