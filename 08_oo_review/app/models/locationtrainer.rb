@@ -27,6 +27,7 @@ class LocationTrainer
     found_lt = self.all.find do |lt|
       lt.location == location && lt.trainer == trainer
     end
+
     if found_lt
       found_lt
     else

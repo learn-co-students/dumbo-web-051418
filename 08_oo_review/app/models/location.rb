@@ -26,4 +26,24 @@ class Location
       lt.trainer
     end
   end
+
+  def clients
+    self.location_trainers.map do |lt|
+      lt.clients
+    end.flatten
+  end
+
+  def self.most_clients
+    # returns the location that has the least number of clients
+
+    
+    # .min_by on the self.all method
+    # count up how many clients a location has
+
+
+
+    self.all.min_by do |location|
+      #how many clients does a location have
+    end
+  end
 end

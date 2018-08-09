@@ -22,11 +22,17 @@ class Client
     self.location_trainer.location
   end
 
-  def reassign_trainer(trainer)
+  def reassign_trainer(new_trainer)
     # should take a trainer as argument and assign it to the client
+    # some_new_location_trainer => uses the correct location and trainer
+    # self.location_trainer = some_new_location_trainer
+
     # find the location associated with this client
+
     # find or create a location trainer with those two (location and trainer)
-    self.location_trainer = LocationTrainer.find_or_create(self.location, trainer)
+
+
+    self.location_trainer = LocationTrainer.find_or_create(self.location, new_trainer)
   end
 
 

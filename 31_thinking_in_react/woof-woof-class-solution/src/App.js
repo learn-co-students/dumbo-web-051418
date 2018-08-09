@@ -35,6 +35,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.dogs);
     return (
       <div>
         <DogList dogs={this.state.dogs} handleClick={this.displayDog}/>

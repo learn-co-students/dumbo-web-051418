@@ -4,12 +4,12 @@
       "id": 1,
       "name": "Baby",
       "breed": "Schnauzer",
-      "gender": "male"
+      "gender": "female"
     },
     {
       "id": 2,
       "name": "Teddy",
-      "breed": "Rhodesian Ridgeback",
+      "breed": "Dragon",
       "gender": "female"
     },
     {
