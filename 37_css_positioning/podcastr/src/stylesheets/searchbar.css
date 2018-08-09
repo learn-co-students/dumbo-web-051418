@@ -1,0 +1,10 @@
+#search-bar {
+  height: 10vh;
+  width: 100vw;
+}
+
+#search-bar input {
+  width: 60vw;
+  font-size: 6vh;
+  text-align: center;
+}

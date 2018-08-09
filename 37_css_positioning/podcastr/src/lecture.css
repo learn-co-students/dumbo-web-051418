@@ -1,0 +1,104 @@
+/* whole app */
+.App {
+  display: grid;
+  grid-template-columns: 10vw 80vw 10vw;
+  grid-template-areas: "l m r";
+  padding-top: 12vh;
+}
+
+
+/* search bar */
+#search-bar {
+  background-color: purple;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+}
+
+
+/* podcast list */
+#podcast-list {
+  display: flex;
+  flex-wrap: wrap;
+  grid-area: m;
+}
+
+.podcast-item {
+  margin: 1vmin;
+  background-color: orange;
+  text-align: center;
+  border-radius: 40px;
+  padding-top: 40px;
+}
+
+
+/* side bar */
+#side-bar {
+  grid-area: l;
+  position: fixed;
+  margin-top: 12vh;
+  height: calc(100vh - 12vh);
+  overflow-y: scroll;
+}
+
+.favorited {
+  background-color: blue;
+  color: white;
+  display: flex;
+  min-height: 10vh;
+  border-radius: 20px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1vh;
+}
+
+/* podcast show */
+#podcast-show {
+  grid-area: m;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 60% 40%;
+  grid-gap: 10vw;
+  grid-template-areas: "tl tr" "bottom bottom";
+}
+
+#navigation-buttons {
+  position: relative;
+  bottom: calc(100% - 3vh);
+  height: 3vh;
+}
+
+#navigation-buttons span {
+  background-color: grey;
+  border-radius: 50%;
+  margin: 0.1vmax;
+  padding: 0.2vmax;
+  text-align: center;
+}
+
+#navigation-buttons span:hover {
+  padding:0.5vmax;
+  background-color: blue;
+}
+
+#podcast-info {
+  grid-area: tl;
+}
+
+#podcast-image {
+  grid-area: tr;
+  max-height: 40vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+#podcast-image img {
+  max-height: 100%;
+}
+
+#episode-list {
+  grid-area: bottom;
+}
