@@ -5,7 +5,11 @@ import SideBar from "./components/SideBar"
 import PodcastList from "./components/PodcastList"
 import PodcastShow from "./components/PodcastShow"
 
-import { makeQuery } from "./adapter"
+
+import SignUp from "./components/SignUp"
+import SignIn from "./components/SignIn"
+
+import { makeQuery, postSignIn, postSignUp } from "./adapter"
 
 // const podcasts = [
 //   {id: 1, name: "pod save america"},
@@ -25,9 +29,9 @@ class App extends Component {
   state = {
     searchInput: "",
     podcasts: [],
-    mediaType: "podcast",
     selectedPodcast: null,
-    favorited: []
+    favorited: [],
+    user: null
   }
 
   componentDidMount(){
@@ -35,7 +39,7 @@ class App extends Component {
   }
 
   updatePodcasts = () => {
-    makeQuery(this.state.searchInput, this.state.mediaType).then(this.setPodcasts)
+    makeQuery(this.state.searchInput).then(this.setPodcasts)
   }
 
   handleChange = (e) => {
@@ -75,6 +79,23 @@ class App extends Component {
     this.setState({ selectedPodcast: null })
   }
 
+  signIn = (username, password) => {
+    postSignIn(username, password)
+      .then(this.assignUser)
+  }
+
+  signUp = (username, password) => {
+    postSignUp(username, password)
+      .then(this.assignUser)
+      .catch(console.log)
+  }
+
+  assignUser = ({user, favorited}) => {
+    this.setState({
+      user, favorited
+    })
+  }
+
 
 
   render() {
@@ -82,9 +103,15 @@ class App extends Component {
       <div className="App">
         <SearchBar searchInput={this.state.searchInput} handleChange={this.handleChange}/>
         { this.state.favorited[0] && <SideBar favorited={this.state.favorited} selectPodcast={this.selectPodcast}/>}
-        { this.state.selectedPodcast ?
+        { this.state.user ?
+          this.state.selectedPodcast ?
           <PodcastShow podcast={this.state.selectedPodcast} unSelectPodcast={this.unSelectPodcast} favorite={this.favorite} removeFromFavorited={this.removeFromFavorited} isFavorited={this.isFavorited}/> :
           <PodcastList podcasts={this.state.podcasts} selectPodcast={this.selectPodcast}/>
+          :
+          <React.Fragment>
+            <SignIn handleSubmit={this.signIn} />
+            <SignUp handleSubmit={this.signUp} />
+          </React.Fragment>
         }
       </div>
     );

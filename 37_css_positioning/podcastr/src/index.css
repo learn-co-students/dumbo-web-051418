@@ -3,3 +3,25 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+form {
+  position: fixed;
+  top: 20vh;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+form input {
+  width: 20vw;
+  font-size: 6vh;
+  text-align: center;
+}
+
+#sign-up {
+  left: 25vw;
+}
+
+#sign-in {
+  left: 50vw;
+}

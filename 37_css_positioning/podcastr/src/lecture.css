@@ -60,7 +60,6 @@
   display: grid;
   grid-template-rows: 50% 50%;
   grid-template-columns: 60% 40%;
-  grid-gap: 10vw;
   grid-template-areas: "tl tr" "bottom bottom";
 }
 
