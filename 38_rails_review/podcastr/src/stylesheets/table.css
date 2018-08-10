@@ -1,0 +1,40 @@
+#episode-list {
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+#episode-list thead {
+  background: grey;
+  color: white;
+}
+
+#episode-list thead tr {
+  display: block;
+}
+#episode-list thead tr th {
+  border: 1px solid white;
+}
+.table-name {
+  width:10vw;
+  text-align: center;
+}
+
+.table-desc {
+  width: 60vw;
+}
+
+.table-date {
+  width: 5vw;
+}
+
+.table-duration {
+  width: 5vw;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+#episode-list tbody {
+  display: block;
+  height: 40vh;
+  overflow: scroll;
+}

@@ -11,19 +11,6 @@ import SignIn from "./components/SignIn"
 
 import { makeQuery, postSignIn, postSignUp, favoritePodcast, unFavoritePodcast } from "./adapter"
 
-// const podcasts = [
-//   {id: 1, name: "pod save america"},
-//   {id: 2, name: "pchh"},
-//   {id: 3, name: "npr politics"},
-//   {id: 4, name: "invisibilia"},
-//   {id: 5, name: "more perfect"},
-//   {id: 6, name: "s-town"},
-//   {id: 7, name: "this american life"},
-//   {id: 8, name: "hero club"},
-//   {id: 9, name: "adventure zone"},
-//   {id: 10, name: "quality control"},
-// ]
-
 class App extends Component {
 
   state = {

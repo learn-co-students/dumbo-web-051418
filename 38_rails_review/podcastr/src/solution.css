@@ -1,23 +1,12 @@
-/* whole app */
-.App {
-  display: grid;
-  grid-template-columns: 10vw 80vw 10vw;
-  grid-template-areas: "l m r";
-  padding-top: 12vh;
-}
-
-
-/* search bar */
-#search-bar {
+/* #search-bar {
   background-color: purple;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   position: absolute;
 }
 
 
-/* podcast list */
 #podcast-list {
   display: flex;
   flex-wrap: wrap;
@@ -25,61 +14,65 @@
 }
 
 .podcast-item {
-  margin: 1vmin;
   background-color: orange;
+  margin: 1vmin;
+  border-radius: 2em;
+  overflow: hidden;
   text-align: center;
-  border-radius: 40px;
-  padding-top: 40px;
 }
 
+.App {
+  padding-top: 12vh;
+  display: grid;
+  grid-template-columns: 10vw 80vw 10vw;
+  grid-template-areas: "l m r";
+}
 
-/* side bar */
 #side-bar {
   grid-area: l;
   position: fixed;
-  margin-top: 12vh;
-  height: calc(100vh - 12vh);
+  left: 0;
+  top: 15vh;
+  max-height: 70vh;
   overflow-y: scroll;
 }
 
 .favorited {
+  margin-bottom: 1vh;
   background-color: blue;
   color: white;
+  border-radius: 1em;
+  min-height: 5vh;
+  padding: 0.5vw;
   display: flex;
-  min-height: 10vh;
-  border-radius: 20px;
-  width: 100%;
-  justify-content: center;
   align-items: center;
-  margin-bottom: 1vh;
-  text-align: center;
+  justify-content: center;
 }
 
-/* podcast show */
 #podcast-show {
   grid-area: m;
   display: grid;
-  grid-template-rows: 50% 50%;
   grid-template-columns: 60% 40%;
-  grid-template-areas: "tl tr" "bottom bottom";
+  grid-template-rows: 50% 50%;
+  grid-template-areas: "tl tr" "bottom bottom"
 }
 
 #navigation-buttons {
+  height: 3vh;
   position: relative;
   bottom: calc(100% - 3vh);
-  height: 3vh;
 }
 
 #navigation-buttons span {
   background-color: grey;
   border-radius: 50%;
+  text-align: center;
   margin: 0.1vmax;
   padding: 0.2vmax;
-  text-align: center;
 }
 
 #navigation-buttons span:hover {
-  padding:0.5vmax;
+  padding: 0.5vmax;
   background-color: blue;
 }
 
@@ -101,4 +94,4 @@
 
 #episode-list {
   grid-area: bottom;
-}
+} */

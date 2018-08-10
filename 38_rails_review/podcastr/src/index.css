@@ -16,6 +16,14 @@ form input {
   width: 20vw;
   font-size: 6vh;
   text-align: center;
+  border: 0.2vmin solid purple;
+}
+
+form button {
+  width: 20.3vw;
+  margin-top: 1vw;
+  font-size: 6vh;
+  text-align: center;
 }
 
 #sign-up {

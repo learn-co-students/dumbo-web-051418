@@ -1,0 +1,12 @@
+#podcast-list {
+  width: 100%;
+}
+
+.podcast-item {
+  width: 250px;
+  height: 50vh;
+}
+
+.podcast-item img {
+  width: 100%;
+}
